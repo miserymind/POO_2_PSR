@@ -61,7 +61,7 @@ class PasswordGenerator
                 : (int)$number;
 
 
-        $password = '$char';
+        $password = $char = '';
 
         switch ($strength) {
             case self::PASSWORD_EASY:
