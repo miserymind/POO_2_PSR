@@ -10,9 +10,9 @@ namespace Web1\StringGenerator;
 
 class PasswordGenerator
 {
-    const PASSWORD_EASY     = 0;
+    const PASSWORD_EASY   = 0;
     const PASSWORD_MEDIUM   = 1;
-    const PASSWORD_HARD     = 2;
+    const PASSWORD_HARD   = 2;
 
     /**
      * @var string
@@ -73,7 +73,6 @@ class PasswordGenerator
         for ($i = 0; $i < $lenght; $i++) {
             $password .= substr($char, mt_rand(0, (strlen($char)-1)), 1);
         }
-
         return $password;
     }
 } 
