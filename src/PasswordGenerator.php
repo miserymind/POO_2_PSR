@@ -10,9 +10,9 @@ namespace Web1\StringGenerator;
 
 class PasswordGenerator
 {
-    const PASSWORD_EASY = 0;
+    const PASSWORD_EASY   = 0;
     const PASSWORD_MEDIUM = 1;
-    const PASSWORD_HARD = 2;
+    const PASSWORD_HARD   = 2;
     /**
      * @var string
      */
@@ -44,7 +44,7 @@ class PasswordGenerator
         ]))
             throw new \Exception('Bad strength!');
 
-        $lenght  = (null === $number)
+        $lenght   = (null === $number)
             ? self::$passwordDefaultLenght
             : (0 === (int)$number)
                 ? self::$passwordDefaultLenght
