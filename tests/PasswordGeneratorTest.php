@@ -7,8 +7,6 @@
  */
 
 namespace tests\Web1\StringGenerator;
-
-
 use Web1\StringGenerator\PasswordGenerator;
 
 class PasswordGeneratorTest extends \PHPUnit_Framework_TestCase
