@@ -61,6 +61,7 @@ class PasswordGenerator
                 : (int)$number;
 
 
+
         $password = $char = '';
 
         switch ($strength) {
