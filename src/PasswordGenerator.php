@@ -8,35 +8,31 @@
 
 namespace Web1\StringGenerator;
 
-
 class PasswordGenerator
 {
-
     const PASSWORD_EASY     = 0;
     const PASSWORD_MEDIUM   = 1;
     const PASSWORD_HARD     = 2;
 
+    /**
+     * @var string
+     */
+    private static $passwordCharEasy  = 'abcdefghijklmnopqrstuvwxyz';
 
     /**
      * @var string
      */
-    private static $passwordCharEasy        = 'abcdefghijklmnopqrstuvwxyz';
+    private static $passwordCharMedium = 'ABCDEFGHIJKLMNOPQRSTWXYZ0123456789';
 
     /**
      * @var string
      */
-    private static $passwordCharMedium      = 'ABCDEFGHIJKLMNOPQRSTWXYZ0123456789';
-
-    /**
-     * @var string
-     */
-    private static $passwordCharHard        = '#!$€£%éèà@|=+';
+    private static $passwordCharHard = '#!$€£%éèà@|=+';
 
     /**
      * @var int
      */
     private static $passwordDefaultLenght   = 10;
-
 
     /**
      * @param null $number
@@ -60,7 +56,6 @@ class PasswordGenerator
                 ? self::$passwordDefaultLenght
                 : (int)$number;
 
-
         $password = $char = '';
 
         switch ($strength) {
@@ -75,13 +70,10 @@ class PasswordGenerator
                 break;
         }
 
-
         for ($i = 0; $i < $lenght; $i++) {
             $password .= substr($char, mt_rand(0, (strlen($char)-1)), 1);
         }
 
         return $password;
-
     }
-
 } 
