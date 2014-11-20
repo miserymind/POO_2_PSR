@@ -12,7 +12,7 @@ class PasswordGenerator
 {
     const PASSWORD_EASY = 0;
     const PASSWORD_MEDIUM = 1;
-    const PASSWORD_HARD   = 2;
+    const PASSWORD_HARD = 2;
     /**
      * @var string
      */
@@ -37,19 +37,18 @@ class PasswordGenerator
      */
     public static  function getRandomString($number = null, $strength = self::PASSWORD_MEDIUM)
     {
-        if (!in_array($strength, [
+        if (false === in_array($strength, [
             self::PASSWORD_EASY,
             self::PASSWORD_MEDIUM,
             self::PASSWORD_HARD,
         ]))
             throw new \Exception('Bad strength!');
 
-        $lenght = (is_null($number))
+        $lenght  = (null === $number)
             ? self::$passwordDefaultLenght
             : (0 === (int)$number)
                 ? self::$passwordDefaultLenght
                 : (int)$number;
-
         $password = $char = '';
 
         switch ($strength) {
